@@ -16,6 +16,8 @@ public class ExceptionChallenge {
      *
      * Check out this guide on throwing exceptions: https://rollbar.com/guides/java/how-to-throw-exceptions-in-java/#
      */
-    public void mustThrow(){
-    }
+    public void mustThrow()throws Exception{
+            throw new Exception("Can't divide by zero");    
+}
+
 }
