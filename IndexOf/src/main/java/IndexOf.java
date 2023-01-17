@@ -13,10 +13,16 @@ public class IndexOf {
      */
     public int getIndex(int[] arr, int n){
         boolean testvalue = true;
-        while(testvalue){
-            for
+        int k=0;
+        while(testvalue=true){
+            for(int i=0; i < arr.length;i++){
+                if(arr[i]==n){
+                    k=i;
+                    testvalue=false;
+                }
+            }
         }
-        
+        return k;
         
     }
 }
