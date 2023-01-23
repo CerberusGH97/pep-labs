@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class CombineArrays {
     /**
@@ -8,7 +10,7 @@ public class CombineArrays {
      * @return an array containing the contents of arr1 followed by the contents of arr2.
      */
     public int[] combine(int[] arr1, int[] arr2){
-
-        return null;
+        int[] arr3 = IntStream.concat(Arrays.stream(arr1), Arrays.stream(arr2)).toArray();
+        return arr3;
     }
 }
