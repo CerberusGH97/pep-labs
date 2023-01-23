@@ -55,7 +55,7 @@ public class AuthorDAO {
             String sql = "INSERT INTO Author name VALUES ?" ;
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-            setString(1, author);
+            preparedStatement.setString(1, author.getName());
             
             preparedStatement.executeUpdate();
             ResultSet pkeyResultSet = preparedStatement.getGeneratedKeys();
@@ -69,6 +69,5 @@ public class AuthorDAO {
         return null;
     }
 
-    private void setString(int i, Author author) {
-    }
+    
 }
