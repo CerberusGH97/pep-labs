@@ -1,3 +1,7 @@
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.Set;
+
 
 public class MostCommonCharacter {
     /**
@@ -7,7 +11,34 @@ public class MostCommonCharacter {
      * @param str A String.
      * @return the most common character within str.
      */
+
     public char recurringChar(String str) {
-        return ' ';
+        HashMap<Character, Integer> charCountMap = new HashMap<>();
+
+        char[] charArray = str.replaceAll("\\s+","").toCharArray();
+
+        for(char everyChar : charArray){
+            if(charCountMap.containsKey(everyChar)){
+                charCountMap.put(everyChar, charCountMap.get(everyChar)+1);
+            }
+            else {
+                charCountMap.put(everyChar, 1);
+            }
+        }
+        Set<Entry<Character, Integer>> entrySet = charCountMap.entrySet();
+        int maxCount = 0;
+        char maxChar = 0;
+
+        for(Entry<Character, Integer> entry: entrySet){
+
+            if(entry.getValue() > maxCount){
+                maxCount = entry.getValue();
+                maxChar = entry.getKey();
+            }
+
+        }
+        return maxChar;
+        }
+
     }
-}
+
