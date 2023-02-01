@@ -20,8 +20,19 @@ public class WordCountMap {
         
         String [] newString = words.split(" ");
 
-        for
+        for (String word : newString){
 
-        return null;
+            Integer integer = wordMap.get(word);
+
+            if (integer == null)
+                wordMap.put(word, 1);
+
+            else {
+
+                wordMap.put(word, integer +1);
+            }
+        }   
+
+        return wordMap;
     }
 }
