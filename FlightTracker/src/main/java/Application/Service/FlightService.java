@@ -66,7 +66,7 @@ public class FlightService {
         if(flightFromDb == null) return null; 
 
         flightDAO.updateFlight(flight_id, flight);
-        return this.flightDAO.getFlightById(flight_id);
+        return flightDAO.getFlightById(flight_id);
         }
     
 

@@ -150,7 +150,7 @@ public class FlightAppTest {
     public void updateFlightDAOTest1(){
         Flight f1updated = new Flight( "reston", "dallas");
         flightDAO.updateFlight(1, f1updated);
-        Flight f1expected = new Flight(1, "tampa", "dallas");
+        Flight f1expected = new Flight(1, "reston", "dallas");
         Flight f1actual = flightDAO.getFlightById(1);
         Assert.assertEquals(f1expected, f1actual);
     }
